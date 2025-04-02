@@ -20,7 +20,7 @@
     },
     data() {
       return {
-        todos: []
+        todos: JSON.parse(localStorage.getItem('todos')) || []
       }
     },
     methods: {
@@ -50,6 +50,14 @@
       },
       clearAllDone() {
         this.todos = this.todos.filter(todo => !todo.done);
+      }
+    },
+    watch: {
+      todos: {
+        deep: true,
+        handler(value) {
+          localStorage.setItem('todos', JSON.stringify(value));
+        }
       }
     }
   }
