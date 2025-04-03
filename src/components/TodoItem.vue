@@ -33,7 +33,7 @@
 <script>
   export default {
     name: 'TodoItem',
-    props: ['todo', 'changeTodoDone', 'deleteTodo'],
+    props: ['todo'],
     data() {
       return {
         itemStyle: 'background-color: #FFFFFF;',
@@ -43,7 +43,7 @@
     },
     methods: {
       handleCheck(id) {
-        this.changeTodoDone(id);
+        this.$bus.$emit('changeTodoDone', id);
       },
       handleMouseOver() {
         this.itemStyle = 'background-color: #C0C4CC;';
@@ -54,7 +54,7 @@
         this.btnStyle = 'display: none;';
       },
       ensureDelTodo(id) {
-        this.deleteTodo(id);
+        this.$bus.$emit('deleteTodo', id);
         this.dialogVisible = false;
       }
     }

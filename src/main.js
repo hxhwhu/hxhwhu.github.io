@@ -8,4 +8,7 @@ Vue.use(ElementUI)
 
 new Vue({
   render: h => h(App),
+  beforeCreate() {
+    Vue.prototype.$bus = this; // 全局事件总线
+  }
 }).$mount('#app')

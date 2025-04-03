@@ -4,8 +4,6 @@
       v-for="todo in todos"
       :key="todo.id"
       :todo="todo"
-      :changeTodoDone="changeTodoDone"
-      :deleteTodo="deleteTodo"
     />
   </div>
 </template>
@@ -17,7 +15,7 @@
     components: {
       TodoItem
     },
-    props: ['todos', 'changeTodoDone', 'deleteTodo']
+    props: ['todos']
   }
 </script>
 

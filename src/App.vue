@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <TodoHeader @receiveTodo="receiveTodo" />
-    <TodoList :todos="todos" :changeTodoDone="changeTodoDone" :deleteTodo="deleteTodo" />
+    <TodoList :todos="todos" />
     <TodoFooter :todos="todos" :clearAllDone="clearAllDone" :checkAll="checkAll" />
   </div>
 </template>
@@ -59,6 +59,14 @@
           localStorage.setItem('todos', JSON.stringify(value));
         }
       }
+    },
+    mounted() {
+      this.$bus.$on('changeTodoDone', this.changeTodoDone);
+      this.$bus.$on('deleteTodo', this.deleteTodo);
+    },
+    beforeDestroy() {
+      this.$bus.$off('changeTodoDone');
+      this.$bus.$off('deleteTodo');
     }
   }
 </script>
