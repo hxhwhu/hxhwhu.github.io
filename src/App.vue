@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <TodoHeader :receiveTodo="receiveTodo" />
+    <TodoHeader @receiveTodo="receiveTodo" />
     <TodoList :todos="todos" :changeTodoDone="changeTodoDone" :deleteTodo="deleteTodo" />
     <TodoFooter :todos="todos" :clearAllDone="clearAllDone" :checkAll="checkAll" />
   </div>

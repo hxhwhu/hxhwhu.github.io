@@ -8,7 +8,6 @@
   import { nanoid } from 'nanoid';
   export default {
     name: 'TodoHeader',
-    props: ['receiveTodo'],
     data() {
       return {
         content: ''
@@ -23,7 +22,7 @@
           });
           return;
         }
-        this.receiveTodo({
+        this.$emit('receiveTodo', {
           id: nanoid(),
           content: this.content,
           done: false
