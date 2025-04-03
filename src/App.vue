@@ -1,8 +1,22 @@
 <template>
-  <div class="container">
-    <TodoHeader @receiveTodo="receiveTodo" />
-    <TodoList :todos="todos" />
-    <TodoFooter :todos="todos" :clearAllDone="clearAllDone" :checkAll="checkAll" />
+  <div>
+    <el-row :gutter="20">
+      <el-col :span="12">
+        <div class="container">
+          <strong style="margin: 12px;">Todo</strong>
+          <TodoHeader @receiveTodo="receiveTodo" />
+          <TodoList :todos="todos" />
+          <TodoFooter :todos="todos" :clearAllDone="clearAllDone" :checkAll="checkAll" />
+        </div>
+      </el-col>
+      <el-col :span="12">
+        <div class="grid-content bg-purple container">
+          <strong style="margin: 12px;">Github Search</strong>
+          <SearchUser/>
+          <UserList/>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -11,13 +25,17 @@
   import TodoHeader from './components/TodoHeader.vue';
   import TodoList from './components/TodoList.vue';
   import TodoFooter from './components/TodoFooter.vue';
+  import SearchUser from './components/SearchUser.vue';
+  import UserList from './components/UserList.vue';
 
   export default {
     name: 'App',
     components: {
       TodoHeader,
       TodoList,
-      TodoFooter
+      TodoFooter,
+      SearchUser,
+      UserList
     },
     data() {
       return {
@@ -76,8 +94,6 @@
 
 <style>
   .container {
-    width: 500px;
-    height: 500px;
     border: 1px black solid;
     margin: 20px auto;
     padding: 20px;

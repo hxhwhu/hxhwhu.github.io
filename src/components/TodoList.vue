@@ -22,6 +22,5 @@
 <style>
   .top-margin-20 {
     margin-top: 20px;
-    height: 300px;
   }
 </style>

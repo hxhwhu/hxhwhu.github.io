@@ -1,12 +1,12 @@
 <template>
-  <div class="top-margin-20" v-show="total">
+  <div v-show="total">
     <el-row :gutter="20" style="line-height: 40px;">
-      <el-col :span="17">
+      <el-col :span="13">
         <el-checkbox v-model="allFinished">
           已完成{{finish}}/全部{{total}}
         </el-checkbox>
       </el-col>
-      <el-col :span="7">
+      <el-col :span="11">
         <el-button type="danger" size="mini" :disabled="finish === 0" @click="delAllDone">
           清除已完成任务
         </el-button>
