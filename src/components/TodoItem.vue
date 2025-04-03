@@ -31,6 +31,7 @@
 </template>
 
 <script>
+  import PubSub from 'pubsub-js';
   export default {
     name: 'TodoItem',
     props: ['todo'],
@@ -54,7 +55,8 @@
         this.btnStyle = 'display: none;';
       },
       ensureDelTodo(id) {
-        this.$bus.$emit('deleteTodo', id);
+        // this.$bus.$emit('deleteTodo', id); // 全局事件总线实现
+        PubSub.publish('deleteTodo', id); // PubSub实现
         this.dialogVisible = false;
       }
     }

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import PubSub from 'pubsub-js';
   import TodoHeader from './components/TodoHeader.vue';
   import TodoList from './components/TodoList.vue';
   import TodoFooter from './components/TodoFooter.vue';
@@ -35,7 +36,7 @@
           }
         }
       },
-      deleteTodo(id) {
+      deleteTodo(_, id) {
         for(let i = 0; i < this.todos.length; i++) {
           if(this.todos[i].id === id) {
             this.todos.splice(i, 1);
@@ -62,11 +63,13 @@
     },
     mounted() {
       this.$bus.$on('changeTodoDone', this.changeTodoDone);
-      this.$bus.$on('deleteTodo', this.deleteTodo);
+      // this.$bus.$on('deleteTodo', this.deleteTodo); // 全局事件总线实现
+      this.pubId = PubSub.subscribe('deleteTodo', this.deleteTodo); // PubSub实现
     },
     beforeDestroy() {
       this.$bus.$off('changeTodoDone');
-      this.$bus.$off('deleteTodo');
+      // this.$bus.$off('deleteTodo');
+      PubSub.unsubscribe(this.pubId);
     }
   }
 </script>
