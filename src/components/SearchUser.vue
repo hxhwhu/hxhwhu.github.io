@@ -29,6 +29,7 @@
           errMsg: '',
           list: []
         });
+        // vue-resource插件和axios使用几乎一样，axios换成this.$http即可
         axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
           (response) => {
             this.$bus.$emit('getRes', {
