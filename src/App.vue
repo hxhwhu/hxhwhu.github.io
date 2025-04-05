@@ -22,6 +22,10 @@
                   <i class="el-icon-plus"></i>
                   <span slot="title"><router-link to="/count">count</router-link></span>
                 </el-menu-item>
+                <el-menu-item index="4">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title"><router-link to="/multiRoute">嵌套路由</router-link></span>
+                </el-menu-item>
               </el-menu>
             </el-col>
           </el-row>
