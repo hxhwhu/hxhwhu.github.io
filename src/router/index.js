@@ -5,6 +5,7 @@ import CountVuex from "../pages/CountVuex";
 import MultiRoute from "../pages/MultiRoute";
 import ChildrenRoute1 from "@/pages/MultiRoute/ChildrenRoute1.vue";
 import ChildrenRoute2 from "@/pages/MultiRoute/ChildrenRoute2.vue";
+import InfoDetail from "@/pages/MultiRoute/InfoDetail.vue";
 
 export default new VueRouter({
   routes: [{
@@ -24,7 +25,11 @@ export default new VueRouter({
       component: ChildrenRoute1
     }, {
       path: 'child2',
-      component: ChildrenRoute2
+      component: ChildrenRoute2,
+      children: [{
+        path: 'detail',
+        component: InfoDetail
+      }]
     }]
   }]
 });
