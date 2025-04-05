@@ -17,6 +17,14 @@
         </div>
       </el-col>
     </el-row>
+    <el-row :gutter="20">
+      <el-col :span="12">
+        <div class="container">
+          <strong style="margin: 12px;">Count Vuex</strong>
+          <CountVuex/>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -27,6 +35,7 @@
   import TodoFooter from './components/TodoFooter.vue';
   import SearchUser from './components/SearchUser.vue';
   import UserList from './components/UserList.vue';
+  import CountVuex from './components/CountVuex.vue';
 
   export default {
     name: 'App',
@@ -35,7 +44,8 @@
       TodoList,
       TodoFooter,
       SearchUser,
-      UserList
+      UserList,
+      CountVuex
     },
     data() {
       return {
