@@ -1,5 +1,5 @@
 <template>
-  <div class="top-margin-20">
+  <div>
     <TodoItem
       v-for="todo in todos"
       :key="todo.id"
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import TodoItem from './TodoItem.vue';
+  import TodoItem from './TodoItem';
   export default {
     name: 'TodoList',
     components: {
@@ -18,9 +18,3 @@
     props: ['todos']
   }
 </script>
-
-<style>
-  .top-margin-20 {
-    margin-top: 20px;
-  }
-</style>

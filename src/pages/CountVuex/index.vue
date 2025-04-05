@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row :gutter="20" style="margin-top: 20px;">
+    <el-row :gutter="20">
       <el-col :span="12">
         <el-statistic :value="sum" title="current count" />
       </el-col>
@@ -11,7 +11,7 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-select v-model="n" size="mini" style="width: 80px; margin: 20px 10px 0 40px;">
+      <el-select v-model="n" size="medium" style="width: 80px; margin: 20px 10px 0 40px;">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -19,10 +19,10 @@
           :value="item.value"
         />
       </el-select>
-      <el-button plain size="mini" @click="add(n)">+</el-button>
-      <el-button plain size="mini" @click="minus(n)">-</el-button>
-      <el-button plain size="mini" @click="addOdd(n)">+ if odd</el-button>
-      <el-button plain size="mini" @click="addWait(n)">+ wait</el-button>
+      <el-button plain size="medium" @click="add(n)" class="m-l-40">+</el-button>
+      <el-button plain size="medium" @click="minus(n)" class="m-l-40">-</el-button>
+      <el-button plain size="medium" @click="addOdd(n)" class="m-l-40">+ if odd</el-button>
+      <el-button plain size="medium" @click="addWait(n)" class="m-l-40">+ wait</el-button>
     </el-row>
   </div>
 </template>
@@ -73,3 +73,9 @@
     }
   }
 </script>
+
+<style>
+  .m-l-40 {
+    margin-left: 40px
+  }
+</style>

@@ -1,12 +1,12 @@
 <template>
-  <div @mouseover="handleMouseOver" @mouseout="handleMouseOut">
-    <el-row :gutter="20" style="line-height: 40px;">
-      <el-col :span="20" :style="itemStyle">
+  <div @mouseover="handleMouseOver" @mouseout="handleMouseOut" class="todo-item-margin">
+    <el-row :gutter="20" style="line-height: 40px;" :style="itemStyle">
+      <el-col :span="22">
         <el-checkbox :checked="todo.done" @change="handleCheck(todo.id)">
           {{ todo.content }}
         </el-checkbox>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="2">
         <el-button
           type="danger"
           icon="el-icon-delete"
@@ -62,3 +62,9 @@
     }
   }
 </script>
+
+<style>
+  .todo-item-margin {
+    margin: 10px;
+  }
+</style>

@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <el-input v-model="content" placeholder="请输入内容" @change="addTodo"></el-input>
-  </div>
+    <el-input
+      v-model="content"
+      placeholder="请输入内容，按下回车键进行添加"
+      @change="addTodo"
+    />
 </template>
 
 <script>
