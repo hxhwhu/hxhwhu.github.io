@@ -62,7 +62,15 @@ const router = new VueRouter({
           title: '详情'
         },
         component: InfoDetail
-      }]
+      }],
+      // 独享路由守卫，只针对所配置的组件，只有前置，没有后置
+      // beforeEnter(to, from, next) {
+      //   if(localStorage.getItem('id') === 'hxh') {
+      //     next();
+      //   } else {
+      //     window.$message.error('您暂时无权查看，请修改鉴权后再查看');
+      //   }
+      // }
     }]
   }]
 });
