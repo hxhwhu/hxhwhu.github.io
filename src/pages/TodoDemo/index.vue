@@ -69,6 +69,27 @@
       this.$bus.$off('changeTodoDone');
       // this.$bus.$off('deleteTodo');
       PubSub.unsubscribe(this.pubId);
+    },
+    // 进入守卫————通过路由规则，进入该组件时被调用
+    beforeRouteEnter(to, from, next) {
+      next();
+      window.$notify({
+        title: '您好',
+        message: '欢迎来到待办事项',
+        type: 'success',
+        position: 'top-left'
+      });
+    },
+    // 离开守卫————通过路由规则，离开该组件时被调用
+    beforeRouteLeave(to, from, next) {
+      window.$confirm('您没有保存本页面的数据，确定要离开吗？', '提示', {
+        confirmButtonText: '残忍离开',
+        cancelButtonText: '我再想想',
+        type: 'warning'
+      }).then(() => {
+        next();
+      }).catch(() => {
+      });
     }
   };
 </script>

@@ -19,5 +19,7 @@ new Vue({
   beforeCreate() {
     Vue.prototype.$bus = this; // 全局事件总线
     window.$message = this.$message;
+    window.$notify = this.$notify;
+    window.$confirm = this.$confirm;
   }
 }).$mount('#app')
