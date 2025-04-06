@@ -32,7 +32,7 @@
         </el-aside>
         <el-main>
           <el-row :gutter="20">
-            <el-col :span="12" class="container">
+            <el-col :span="12" class="container" style="min-height: 110px;">
               <router-view></router-view>
             </el-col>
           </el-row>
