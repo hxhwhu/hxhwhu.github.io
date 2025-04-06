@@ -2,29 +2,30 @@
   <div>
     <el-container>
       <el-header><h1>Vue 是一套用于构建用户界面的渐进式框架</h1></el-header>
+      <el-divider/>
       <el-container>
         <el-aside width="200px">
           <el-row class="tac">
             <el-col :span="24">
               <el-menu
-                default-active="1"
                 class="el-menu-vertical-demo"
+                router
               >
-                <el-menu-item index="1">
+                <el-menu-item index="/todo">
                   <i class="el-icon-tickets"></i>
-                  <span slot="title"><router-link to="/todo">todo</router-link></span>
+                  <span slot="title">todo</span>
                 </el-menu-item>
-                <el-menu-item index="2">
+                <el-menu-item index="/githubSearch">
                   <i class="el-icon-search"></i>
-                  <span slot="title"><router-link to="/githubSearch">githubSearch</router-link></span>
+                  <span slot="title">githubSearch</span>
                 </el-menu-item>
-                <el-menu-item index="3">
+                <el-menu-item index="/count">
                   <i class="el-icon-plus"></i>
-                  <span slot="title"><router-link to="/count">count</router-link></span>
+                  <span slot="title">count</span>
                 </el-menu-item>
-                <el-menu-item index="4">
+                <el-menu-item index="/multiRoute">
                   <i class="el-icon-menu"></i>
-                  <span slot="title"><router-link to="/multiRoute">嵌套路由</router-link></span>
+                  <span slot="title">嵌套路由</span>
                 </el-menu-item>
               </el-menu>
             </el-col>
