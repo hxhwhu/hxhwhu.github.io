@@ -6,6 +6,9 @@
 
 <script>
   export default {
-    name: 'ChildrenRoute1'
+    name: 'ChildrenRoute1',
+    beforeDestroy() {
+      console.log('ChildrenRoute1组件即将被销毁')
+    }
   };
 </script>
