@@ -18,5 +18,6 @@ new Vue({
   router,
   beforeCreate() {
     Vue.prototype.$bus = this; // 全局事件总线
+    window.$message = this.$message;
   }
 }).$mount('#app')
